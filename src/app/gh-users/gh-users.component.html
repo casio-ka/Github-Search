@@ -1,3 +1,10 @@
+<form class="search-form">
+    <div class="search form-group">
+        <input type="text" placeholder="Search Github" [(ngModel)]="username" name="username">
+        <button type="submit" onlick="findUser()" class="btn btn-outline-secondary">Search</button>
+    </div>
+ </form>
+ 
 <div *ngIf="profile">
     <div class="card">
         <div class="card-header">
@@ -27,7 +34,15 @@
                                <span class="badge badge-dark">{{profile.public_gist}} Public gists</span>
                                <span class="badge badge-dark">{{profile.public_repos}} Public repos</span>
                            </p>
-                           <P><a href="{{profile.html_url}}" target="_blank" type="button" class="btn btn-outline-primary">View profile on github</a></P>
+                           <p><a href="{{profile.html_url}}" target="_blank" type="button" class="btn btn-outline-primary">View profile on github</a></p>
+                           <div class="card border-primary mb-3" style="max-width: 100%;">
+                            <div class="card-header">Repos</div>
+                            <div class="card-body" *ngFor="let repo of repos">
+                              <h4 class="card-title"  >{{repo.name}} <a class="btn btn-outline-primary float-right" href="{{repo.html_url}}" target="_blank"
+                                >View On Github</a></h4>
+                              <p class="card-text">{{repo.description}}</p>
+                            </div>
+                          </div>
                        </div>
                    </div>
 
