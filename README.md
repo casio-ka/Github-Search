@@ -15,7 +15,8 @@
 - Run ng serve from your terminal
 
 ## Live Demo
-To view the page click on the link belo
+To view the page click on the link below
+* [https://casio-ka.github.io/Github-Search/](*)
 
 ## Development server
 
