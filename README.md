@@ -1,14 +1,25 @@
-# GithubSearch
+# GITHUB-SEARCH
+#### GITHUB SEARCH August 31st 2020
+#### By **Wainaina K**
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.6.
+## Description
+- 
+ This is a web app that allows users to search a github username and the users repositories will be displayed alongside their profile details.
+ This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.6.
+
+## Setup/Installation requirements
+
+
+- Clone  or download and unzip the repository from github, [https://github.com/casio-ka/Github-Search](https://github.com/casio-ka/Github-Search.git).
+- If you have git Use this command `git clone *` to clone the project.
+- Run ng serve from your terminal
+
+## Live Demo
+To view the page click on the link belo
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 ## Build
 
@@ -22,6 +33,17 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
+## Technologies Used
+- Angular CLI
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Known Bugs
+- There are no known bugs currently. The page works as expected.
+
+## Support and Contact Details
+- For any comments,suggestions,feedback or inquiries, contact me via email: `wainainakasyoka@gmail.com`
+
+
+- Make contributions to the code.
+
+## License
+- This project is licensed under the MIT Open Source license Copyright (c) 2020. [Wainaina Kasyoka](https://github.com/casio-ka)
