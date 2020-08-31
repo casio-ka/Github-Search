@@ -21,10 +21,10 @@ export class GhRepoComponent implements OnInit {
   constructor(private Userprofile: UserprofileService , private githubService: GithubService) { } 
 
   public getUserRepos(event: any) {
-    // tslint:disable-next-line:prefer-const
+    
     let promise = new Promise((resolve , reject) => {
      this.githubService.getUserRepos (this.username).toPromise().then(response => {
-       this.repos = response; // this will push all data to array [repo]
+       this.repos = response; 
         resolve();
         console.log ('data', resolve)
       },

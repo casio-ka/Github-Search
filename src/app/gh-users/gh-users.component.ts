@@ -20,7 +20,8 @@ export class GhUsersComponent implements OnInit {
 
   errorMessage;
 
-  constructor(private Userprofile: UserprofileService, private githubService: GithubService) { }
+  constructor(private Userprofile: UserprofileService, private githubService: GithubService) { 
+  }
 
   public getUserInfo(event: any) {
    
@@ -36,6 +37,23 @@ export class GhUsersComponent implements OnInit {
     });
     return promise;
   }
+
+  public getUserRepos(event: any) {
+    
+    let promise = new Promise((resolve , reject) => {
+     this.githubService.getUserRepos (this.username).toPromise().then(response => {
+       this.repos = response; 
+        resolve();
+        console.log ('data', resolve)
+      },
+      error => {
+        this.errorMessage = 'An error was encountered';
+      }
+    );
+    });
+    return promise;
+  }
+
 
   
 

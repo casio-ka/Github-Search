@@ -81,17 +81,24 @@
               </p>
               <div class="card border-primary mb-3" style="max-width: 100%">
                 <div class="card-header">Repos</div>
-                <div class="card-body" *ngFor="let repo of repos">
-                  <h4 class="card-title">
-                    {{ repo.name }}
-                    <a
-                      class="btn btn-outline-primary float-right"
-                      href="{{ repo.html_url }}"
-                      target="_blank"
-                      >View On Github</a
-                    >
-                  </h4>
-                  <p class="card-text">{{ repo.description }}</p>
+                <div class="card-body">
+                    <ul *ngFor="let repo of repos" class="list-group">
+                     <li class="list-group-item" >
+                        {{ repo.id }}
+                     </li>
+                     <li class="list-group-item" >
+                        {{ repo.name }} <a
+                        class="btn btn-outline-primary float-right"
+                        href="{{ repo.html_url }}"
+                        target="_blank"
+                        >View On Github</a
+                      >
+                     </li>
+                     <li class="list-group-item" >
+                        {{ repo.description }}
+                     </li>
+
+                    </ul>
                 </div>
               </div>
             </div>

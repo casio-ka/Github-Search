@@ -4,7 +4,7 @@ export class user {
         followers_url: number;
         following_url: number;
         repos_url: string;
-        login: number;
+        login: string;
         public_repos: string;
         email: string;
         blog: string;
