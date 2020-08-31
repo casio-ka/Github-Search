@@ -15,3 +15,27 @@
     margin-top: 10px;
     width: 20%;
 }
+h4 {
+    padding: 30px;
+    text-align: center;
+
+}
+
+.user p {
+    text-align: center;
+}
+
+.user {
+  background-image: url("https://images.designtrends.com/wp-content/uploads/2016/01/27113654/Black-and-White-Forest-Background.jpg"); 
+  background-color: #cccccc; 
+  height: 800px; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  background-size: cover; 
+}
+
+@media (min-width: 800px) and (max-width: 850px) {
+    .navbar:not(.top-nav-collapse) {
+        background: #1C2331!important;
+    }
+}
