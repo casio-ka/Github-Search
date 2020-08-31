@@ -11,12 +11,13 @@ import { Observable} from 'rxjs';
 })
 export class GithubService {
 
+  baseURL: string = 'https://api.github.com';
   constructor(private http: HttpClient) { 
 
   }
 
-  getUserRepos(username:string){
-    return this.http.get<repo[]>(`https://api.github.com/users/username/repos?access_token=${environment.GIT_Api_Key}`);
-
+  getUserRepos(username:string): Observable<repo[]> {
+    return this.http.get<repo[]>(this.baseURL + '/users/' + username + '/repos');
+    
   }
 }

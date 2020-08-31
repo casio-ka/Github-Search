@@ -10,12 +10,14 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { GhUsersComponent } from './gh-users/gh-users.component';
 import { GithubService } from './github.service';
+import { GhRepoComponent } from './gh-repo/gh-repo.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     GhUsersComponent,
+    GhRepoComponent,
   ],
   imports: [
     BrowserModule,

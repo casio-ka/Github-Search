@@ -1,10 +1,12 @@
+import { GhRepoComponent } from './gh-repo/gh-repo.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { GhUsersComponent } from './gh-users/gh-users.component';
 
 const routes: Routes = [
-  {path: 'Users', component: GhUsersComponent}
-  {path: 'Users', component: GhUsersComponent}
+
+ {path: '', component: GhUsersComponent }, 
+ {path: 'repo', component: GhRepoComponent },
 
 ];
 

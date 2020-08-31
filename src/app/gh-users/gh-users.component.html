@@ -1,56 +1,103 @@
-<form class="search-form">
+<div class="container">
+  <form class="search-form">
     <div class="search form-group">
-        <input type="text" placeholder="Search Github" [(ngModel)]="username" name="username">
-        <button type="submit" onlick="findUser()" class="btn btn-outline-secondary">Search</button>
+      <input
+        class="form-control"
+        type="text"
+        placeholder="Search Github"
+        [(ngModel)]="username"
+        name="username"
+        (keyup)="getUserInfo($event)"
+      />
+      <a
+        type="submit"
+        type="button"
+        onlick="getUserInfo()"
+        class="btn btn-outline-secondary"
+        >Search</a
+      >
     </div>
- </form>
- 
-<div *ngIf="profile">
+  </form>
+
+  <div *ngIf="profile">
     <div class="card">
-        <div class="card-header">
-            <b class="card-title">{{profile.login}}</b><small *ngIf="profile.name">({{profile.name}})</small>
-            <br> <span *ngIf="profile.company">Works at {{profile.company}}</span> 
+      <div class="card-header">
+        <b class="card-title">{{ profile.login }}</b
+        ><small *ngIf="profile.name">({{ profile.name }})</small> <br />
+        <span *ngIf="profile.company">Works at {{ profile.company }}</span>
+      </div>
 
+      <div class="card-body">
+        <div class="row">
+          <div class="col-sm-3">
+            <img
+              src="{{ profile.avatar_url }}"
+              class="img-fluid rounded-circle"
+              alt="User Image"
+            />
+          </div>
+          <div class="col-sm-5">
+            <ul class="list-group">
+              <li class="list-group-item" *ngIf="profile.bio">
+                {{ profile.bio }}
+              </li>
+              <li class="list-group-item" *ngIf="profile.hireable">
+                Available For Hire
+              </li>
+              <li class="list-group-item" *ngIf="profile.blog">
+                <a href="{{ profile.blog }}" target="_blank">{{
+                  profile.blog
+                }}</a>
+              </li>
+              <li class="list-group-item" *ngIf="profile.email">
+                <a href="emailto:{{ profile.email }}">{{ profile.email }}</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-sm-4">
+            <div>
+              <p>
+                <span class="badge badge-dark"
+                  >{{ profile.followers }} Followers</span
+                >
+                <span class="badge badge-dark"
+                  >Following {{ profile.following }}
+                </span>
+                <span class="badge badge-dark"
+                  >{{ profile.public_gist }} Public gists</span
+                >
+                <span class="badge badge-dark"
+                  >{{ profile.public_repos }} Public repos</span
+                >
+              </p>
+              <p>
+                <a
+                  href="{{ profile.html_url }}"
+                  target="_blank"
+                  type="button"
+                  class="btn btn-outline-primary btn-sm btn-block"
+                  >View profile on github</a
+                >
+              </p>
+              <div class="card border-primary mb-3" style="max-width: 100%">
+                <div class="card-header">Repos</div>
+                <div class="card-body" *ngFor="let repo of repos">
+                  <h4 class="card-title">
+                    {{ repo.name }}
+                    <a
+                      class="btn btn-outline-primary float-right"
+                      href="{{ repo.html_url }}"
+                      target="_blank"
+                      >View On Github</a
+                    >
+                  </h4>
+                  <p class="card-text">{{ repo.description }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        
-       <div class="card-body">
-           <div class="row">
-               <div class="col-sm-3">
-                <img src="{{profile.avatar_url}}" class= "img-fluid rounded-circle"alt="User Image">
-               </div>
-               <div class="col-sm-5">
-                   <ul class="list-group">
-                       <li class="list-group-item" *ngIf="profile.bio">{{profile.bio}}</li>
-                       <li class="list-group-item" *ngIf="profile.hireable">Available For Hire</li>
-                       <li class="list-group-item" *ngIf="profile.blog"><a href="{{profile.blog}}" target="_blank">{{profile.blog}}</a> </li>
-                       <li class="list-group-item" *ngIf="profile.email"><a href="emailto:{{profile.email}}">{{profile.email}}</a></li>
-                       </ul>
-                   </div>
-                   <div class="col-sm-4">
-                       <div>
-                           <p>
-                               <span class="badge badge-dark">{{profile.followers}} Followers</span>
-                               <span class="badge badge-dark">Following {{profile.following}} </span>
-                               <span class="badge badge-dark">{{profile.public_gist}} Public gists</span>
-                               <span class="badge badge-dark">{{profile.public_repos}} Public repos</span>
-                           </p>
-                           <p><a href="{{profile.html_url}}" target="_blank" type="button" class="btn btn-outline-primary">View profile on github</a></p>
-                           <div class="card border-primary mb-3" style="max-width: 100%;">
-                            <div class="card-header">Repos</div>
-                            <div class="card-body" *ngFor="let repo of repos">
-                              <h4 class="card-title"  >{{repo.name}} <a class="btn btn-outline-primary float-right" href="{{repo.html_url}}" target="_blank"
-                                >View On Github</a></h4>
-                              <p class="card-text">{{repo.description}}</p>
-                            </div>
-                          </div>
-                       </div>
-                   </div>
-
-               </div>
-               
-           </div>
-
-       </div>
+      </div>
+    </div>
+  </div>
 </div>
-
-
